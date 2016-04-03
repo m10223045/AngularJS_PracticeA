@@ -8,7 +8,15 @@
 		$http.get('Adult2000.json').success(function(data){
 			store.adultData = data;
 		});
+
+		this.noise = function(item){
+			if (item.Workclass === '?'){
+				return false;
+			};
+			return true;
+		};
 	}]);
+
 
 
 
