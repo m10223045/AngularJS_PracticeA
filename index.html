@@ -1,0 +1,11 @@
+<html ng-app="tablegem">
+	<head>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</head>
+	<body ng-controller="TableController as tables">
+		<ul>
+			<li ng-repeat="table in tables.adultData">{{table.id}}</li>
+		</ul>
+	</body>
+</html>
