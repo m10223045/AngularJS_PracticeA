@@ -2,10 +2,36 @@
 	<head>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
 		<script type="text/javascript" src="app.js"></script>
+		<style type="text/css">
+			th,td {
+				width: 200px;
+				height: 50px;
+				border: 2px solid black;
+				text-align: center;
+			}
+
+			table {
+				border-collapse: collapse;
+			}
+
+			th {
+				background-color: green;
+			}
+
+		</style>
 	</head>
 	<body ng-controller="TableController as tables">
-		<ul>
-			<li ng-repeat="table in tables.adultData">{{table.id}}</li>
-		</ul>
+		<table align="center">
+			<tr>
+				<th>ID</th>
+				<th>Age</th>
+				<th>Workclass</th>
+			</tr>
+			<tr ng-repeat="table in tables.adultData">
+				<td>{{table.id}}</td>
+				<td>{{table.Age}}</td>
+				<td>{{table.Workclass}}</td>
+			</tr>
+		</table>
 	</body>
 </html>
