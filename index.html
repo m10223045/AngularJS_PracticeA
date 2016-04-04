@@ -27,18 +27,19 @@
 	<body ng-controller="TableController as tables">
 
 		<!-- <div>{{ tables.adultData | orderBy: 'id' }} </div> --> 
-
-		<table align="center">
+		<div style="width:600px;height:250px;overflow:auto;" align="center">
+		<table align="center" ng-init="f='id'">
 			<tr>
-				<th ng-click=" f='id' ; rev=!rev">ID</th>
-				<th ng-click=" f='age' ; rev=!rev">Age</th>
+				<th ng-click=" f='id' ; rev=!rev"><div>ID</div></th>
+				<th ng-click=" f='Age' ; rev=!rev">Age</th>
 				<th>Workclass</th>
 			</tr>
-			<tr ng-repeat="table in tables.adultData | orderBy: 'id' : rev" ng-if="tables.noise(table)">
+			<tr ng-repeat="table in tables.adultData | orderBy: f : rev" ng-if="tables.noise(table)">
 				<td>{{table.id}}</td>
 				<td>{{table.Age}}</td>
 				<td>{{table.Workclass}}</td>
 			</tr>
 		</table>
+		</div>
 	</body>
 </html>
